@@ -146,4 +146,16 @@ public class AllocationsApi extends ApiBase {
                 put("/v1/client/allocation/" + id + "/signal", new AllocSignalRequest(signal, task), null),
                 null);
     }
+
+    /**
+     * Restart an allocation.
+     * @param id the allocation ID to stop
+     * @return allocation response, including the id of the follow-up evaluation for any rescheduled alloc.
+     * @throws IOException    if there is an HTTP or lower-level problem
+     * @throws NomadException if the response signals an error or cannot be deserialized
+     */
+    public ServerResponse<AllocStopResponse> restart(String id) throws IOException, NomadException {
+        return executeServerAction(put("/v1/allocation/" + id + "/restart", null),
+                NomadJson.parserFor(AllocStopResponse.class));
+    }
 }
