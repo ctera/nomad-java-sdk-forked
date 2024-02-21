@@ -14,9 +14,3 @@ libraries{
 //     }
 // }
 
-application_environments{
-    pom{
-        location = "sdk"
-    }
-}
-
