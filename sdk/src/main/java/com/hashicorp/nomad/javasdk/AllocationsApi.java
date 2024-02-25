@@ -155,7 +155,7 @@ public class AllocationsApi extends ApiBase {
      * @throws NomadException if the response signals an error or cannot be deserialized
      */
     public ServerResponse<AllocStopResponse> restart(String id) throws IOException, NomadException {
-        return executeServerAction(put("/v1/allocation/" + id + "/restart", null),
+        return executeServerAction(put("/v1/client/allocation/" + id + "/restart", null),
                 NomadJson.parserFor(AllocStopResponse.class));
     }
 }
