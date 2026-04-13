@@ -16,7 +16,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
-import static com.fasterxml.jackson.databind.PropertyNamingStrategy.UPPER_CAMEL_CASE;
+import static com.fasterxml.jackson.databind.PropertyNamingStrategies.UPPER_CAMEL_CASE;
 
 /**
  * Serialises Nomad API model types to JSON, and vice versa.
